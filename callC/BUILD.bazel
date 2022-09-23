@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary")
+
+go_binary(
+    name = "ctest",
+    srcs = [
+        "main.go",
+        "helper.c",
+    ],
+    cgo = True,
+    visibility = ["//:__subpackages__"],
+)
+
